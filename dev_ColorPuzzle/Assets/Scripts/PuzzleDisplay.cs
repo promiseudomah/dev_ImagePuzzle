@@ -180,7 +180,7 @@ public class PuzzleDisplay : MonoBehaviour
 
 	private IEnumerator JugglePuzzle()
 	{
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
 
 		// hide a puzzle tile (one is always missing to allow the puzzle movement).
 		TileDisplayArray[0,0].GetComponent<PuzzleTile>().Active = false;

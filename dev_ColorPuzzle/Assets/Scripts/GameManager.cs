@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        LevelCompleteScreen.SetActive(false);
     }
 
     #endregion
@@ -31,6 +32,19 @@ public class GameManager : MonoBehaviour
     {   
         
         LevelCompleteScreen.SetActive(true);
+    }
+
+    public void NextLevel(){
+        
+        int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if(SceneManager.GetSceneByBuildIndex(nextLevelIndex) == null){
+            
+            LoadMenu();
+            return;
+        }
+
+        SceneManager.LoadScene(nextLevelIndex);
     }
     
 
